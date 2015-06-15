@@ -9,9 +9,22 @@ public class MedicalItem implements Item {
         this.price = price;
     }
 
+    public MedicalItem() {
+
+    }
+
     @Override
     public boolean isImported() {
         return false;
+    }
+
+    public void setImported(boolean isImported) {
+        this.isImported = isImported;
+    }
+
+    @Override
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override

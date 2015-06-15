@@ -9,9 +9,22 @@ public class FoodItem implements Item{
         this.price = price;
     }
 
+    public FoodItem() {
+
+    }
+
     @Override
     public boolean isImported() {
         return isImported;
+    }
+
+    public void setImported(boolean isImported) {
+        this.isImported = isImported;
+    }
+
+    @Override
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override

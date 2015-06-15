@@ -4,6 +4,10 @@ public class OtherItem implements Item {
     private boolean isImported;
     private double price;
 
+    public OtherItem() {
+
+    }
+
     public OtherItem(boolean isImported, double price) {
         this.isImported = isImported;
         this.price = price;
@@ -12,6 +16,15 @@ public class OtherItem implements Item {
     @Override
     public boolean isImported() {
         return isImported;
+    }
+
+    public void setImported(boolean isImported) {
+        this.isImported = isImported;
+    }
+
+    @Override
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
