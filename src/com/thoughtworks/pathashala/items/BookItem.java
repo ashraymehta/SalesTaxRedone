@@ -15,12 +15,12 @@ public class BookItem implements Item {
     }
 
     @Override
-    public double calculateSalesTax() {
+    public double calculateBasicSalesTax() {
         return 0;
     }
 
     @Override
     public double calculateImportDuty() {
-        return 0;
+        return 0.05d * price;
     }
 }

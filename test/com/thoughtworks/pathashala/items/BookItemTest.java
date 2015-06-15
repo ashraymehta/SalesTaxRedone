@@ -8,8 +8,17 @@ public class BookItemTest {
     @Test
     public void shouldCalculateCorrectSalesTax() throws Exception {
         BookItem bookItem = new BookItem(false, 12.49);
-        double actualTax = bookItem.calculateSalesTax();
+        double actualTax = bookItem.calculateBasicSalesTax();
         double expectedTax = 0.0d;
+
+        assertEquals(expectedTax, actualTax);
+    }
+
+    @Test
+    public void shouldCalculateCorrectImportTax() throws Exception {
+        BookItem bookItem = new BookItem(false, 100);
+        double actualTax = bookItem.calculateImportDuty();
+        double expectedTax = 5.0d;
 
         assertEquals(expectedTax, actualTax);
     }
