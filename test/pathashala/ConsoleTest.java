@@ -1,9 +1,11 @@
 package pathashala;
 
 import com.thoughtworks.pathashala.Console;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.BufferedReader;
@@ -21,6 +23,11 @@ public class ConsoleTest {
     @Mock
     PrintStream printStream;
 
+    @Before
+    public void setUp() throws Exception {
+        console = new Console(new BufferedReader(new InputStreamReader(System.in)), printStream);
+    }
+
     @Test
     public void shouldTakeUserInputUntilEmptyLineIsRead() throws Exception {
         String lineOne = "1 book at 12.49";
@@ -37,5 +44,13 @@ public class ConsoleTest {
                 lineTwo + System.lineSeparator() + lineThree + System.lineSeparator();
 
         assertEquals(expectedInput, actualInput);
+    }
+
+    @Test
+    public void shouldPrintAProvidedString() throws Exception {
+        String message = "Hello";
+        console.print(message);
+
+        Mockito.verify(printStream).println(message);
     }
 }

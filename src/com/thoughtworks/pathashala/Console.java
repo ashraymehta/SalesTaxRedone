@@ -33,4 +33,8 @@ public class Console {
             return "";
         }
     }
+
+    public void print(String message) {
+        printStream.println(message);
+    }
 }
