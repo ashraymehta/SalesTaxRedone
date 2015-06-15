@@ -4,6 +4,7 @@ public class MedicalItem implements Item {
     private boolean isImported;
     private double price;
     private String description;
+    private int quantity;
 
     public MedicalItem(boolean isImported, double price) {
         this.isImported = isImported;
@@ -17,6 +18,11 @@ public class MedicalItem implements Item {
     @Override
     public boolean isImported() {
         return false;
+    }
+
+    @Override
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setImported(boolean isImported) {

@@ -4,6 +4,7 @@ public class BookItem implements Item {
     private boolean isImported;
     private double price;
     private String description;
+    private int quantity;
 
     public BookItem() {
 
@@ -21,6 +22,11 @@ public class BookItem implements Item {
     @Override
     public boolean isImported() {
         return isImported;
+    }
+
+    @Override
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setImported(boolean isImported) {

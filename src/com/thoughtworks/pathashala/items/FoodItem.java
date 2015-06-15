@@ -4,6 +4,7 @@ public class FoodItem implements Item{
     private boolean isImported;
     private double price;
     private String description;
+    private int quantity;
 
     public FoodItem(boolean isImported, double price) {
         this.isImported = isImported;
@@ -17,6 +18,11 @@ public class FoodItem implements Item{
     @Override
     public boolean isImported() {
         return isImported;
+    }
+
+    @Override
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setImported(boolean isImported) {
