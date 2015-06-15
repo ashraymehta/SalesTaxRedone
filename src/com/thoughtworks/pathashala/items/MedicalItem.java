@@ -19,8 +19,12 @@ public class MedicalItem implements Item {
         return 0;
     }
 
+    private double roundOff(Double rough) {
+        return (double) Math.round(rough * 100) / 100;
+    }
+
     @Override
     public double calculateImportDuty() {
-        return 0.05d * price;
+        return roundOff(0.05d * price);
     }
 }

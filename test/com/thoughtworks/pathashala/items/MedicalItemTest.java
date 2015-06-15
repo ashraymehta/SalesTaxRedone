@@ -16,9 +16,9 @@ public class MedicalItemTest {
 
     @Test
     public void shouldCalculateCorrectImportTax() throws Exception {
-        MedicalItem medicalItem = new MedicalItem(false, 100);
+        MedicalItem medicalItem = new MedicalItem(false, 12.49);
         double actualTax = medicalItem.calculateImportDuty();
-        double expectedTax = 5.0d;
+        double expectedTax = 0.62d;
 
         assertEquals(expectedTax, actualTax);
     }

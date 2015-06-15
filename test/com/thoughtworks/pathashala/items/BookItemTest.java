@@ -16,9 +16,9 @@ public class BookItemTest {
 
     @Test
     public void shouldCalculateCorrectImportTax() throws Exception {
-        BookItem bookItem = new BookItem(false, 100);
+        BookItem bookItem = new BookItem(false, 12.49);
         double actualTax = bookItem.calculateImportDuty();
-        double expectedTax = 5.0d;
+        double expectedTax = 0.62d;
 
         assertEquals(expectedTax, actualTax);
     }

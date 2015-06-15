@@ -16,9 +16,9 @@ public class FoodItemTest {
 
     @Test
     public void shouldCalculateCorrectImportTax() throws Exception {
-        FoodItem foodItem = new FoodItem(false, 100);
+        FoodItem foodItem = new FoodItem(false, 12.49);
         double actualTax = foodItem.calculateImportDuty();
-        double expectedTax = 5.0d;
+        double expectedTax = 0.62d;
 
         assertEquals(expectedTax, actualTax);
     }

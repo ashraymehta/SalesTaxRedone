@@ -13,4 +13,13 @@ public class OtherItemTest {
 
         assertEquals(expectedTax, actualTax);
     }
+
+    @Test
+    public void shouldCalculateCorrectImportTax() throws Exception {
+        OtherItem otherItem = new OtherItem(false, 100);
+        double actualTax = otherItem.calculateImportDuty();
+        double expectedTax = 5.0d;
+
+        assertEquals(expectedTax, actualTax);
+    }
 }

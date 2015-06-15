@@ -9,6 +9,11 @@ public class BookItem implements Item {
         this.price = price;
     }
 
+
+    private double roundOff(Double rough) {
+        return (double) Math.round(rough * 100) / 100;
+    }
+
     @Override
     public boolean isImported() {
         return isImported;
@@ -21,6 +26,6 @@ public class BookItem implements Item {
 
     @Override
     public double calculateImportDuty() {
-        return 0.05d * price;
+        return roundOff(0.05d * price);
     }
 }
