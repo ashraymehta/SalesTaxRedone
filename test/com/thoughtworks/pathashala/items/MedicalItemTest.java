@@ -22,4 +22,16 @@ public class MedicalItemTest {
 
         assertEquals(expectedTax, actualTax);
     }
+
+    @Test
+    public void shouldBeRepresentedAsStringProperly() throws Exception {
+        MedicalItem medicalItem = new MedicalItem(false, 10);
+        medicalItem.setDescription("imported pills");
+        medicalItem.setQuantity(1);
+
+        String actualString = medicalItem.toString();
+        String expectedString = "1 imported pills at 10.00";
+
+        assertEquals(expectedString, actualString);
+    }
 }

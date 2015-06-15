@@ -23,7 +23,6 @@ public class FoodItemTest {
         assertEquals(expectedTax, actualTax);
     }
 
-
     @Test
     public void shouldBeRepresentedAsStringProperly() throws Exception {
         FoodItem foodItem = new FoodItem(false, 10);
