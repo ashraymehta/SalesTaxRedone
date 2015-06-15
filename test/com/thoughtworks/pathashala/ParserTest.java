@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-import static org.junit.Assert.assertTrue;
+import static junit.framework.Assert.assertEquals;
 
 public class ParserTest {
     private HashMap<String, Item> stringItemHashMap;
@@ -23,10 +23,13 @@ public class ParserTest {
 
     @Test
     public void shouldGetInstanceOfBookWhenBookIsGivenAsInput() throws Exception {
-        String input = "1 imported book at 12.49";
+        String input = "2 imported book at 12.49";
         Parser parser = new Parser(stringItemHashMap);
         Item item = parser.parse(input);
 
-        assertTrue(item instanceof BookItem);
+        String expectedString = "2 imported book at 12.49";
+        String actualString = item.toString();
+
+        assertEquals(expectedString, actualString);
     }
 }

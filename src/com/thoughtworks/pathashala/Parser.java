@@ -27,7 +27,20 @@ public class Parser {
 
         Item item = stringItemHashMap.get(relevantKey);
         String[] split = input.split(" ");
+        int quantity = Integer.parseInt(split[0]);
+        item.setQuantity(quantity);
         double price = Double.parseDouble(split[split.length - 1]);
+
+        String[] atSplit = input.split("at");
+        String beforeAt = atSplit[0];
+        String[] midInput = beforeAt.split(" ");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=1; i<midInput.length; i++) {
+            stringBuilder.append(midInput[i]).append(" ");
+        }
+        item.setDescription(stringBuilder.toString().trim());
+
         item.setPrice(price);
         item.setImported(input.contains("import"));
 
