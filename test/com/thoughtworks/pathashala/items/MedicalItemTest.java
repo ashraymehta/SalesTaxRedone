@@ -13,4 +13,13 @@ public class MedicalItemTest {
 
         assertEquals(expectedTax, actualTax);
     }
+
+    @Test
+    public void shouldCalculateCorrectImportTax() throws Exception {
+        MedicalItem medicalItem = new MedicalItem(false, 100);
+        double actualTax = medicalItem.calculateImportDuty();
+        double expectedTax = 5.0d;
+
+        assertEquals(expectedTax, actualTax);
+    }
 }

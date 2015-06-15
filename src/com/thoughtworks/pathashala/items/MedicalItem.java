@@ -21,6 +21,6 @@ public class MedicalItem implements Item {
 
     @Override
     public double calculateImportDuty() {
-        return 0;
+        return 0.05d * price;
     }
 }
