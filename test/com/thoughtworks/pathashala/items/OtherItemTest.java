@@ -22,4 +22,17 @@ public class OtherItemTest {
 
         assertEquals(expectedTax, actualTax);
     }
+
+
+    @Test
+    public void shouldBeRepresentedAsStringProperly() throws Exception {
+        OtherItem otherItem = new OtherItem(false, 10);
+        otherItem.setDescription("imported pills");
+        otherItem.setQuantity(1);
+
+        String actualString = otherItem.toString();
+        String expectedString = "1 imported pills at 10.00";
+
+        assertEquals(expectedString, actualString);
+    }
 }
