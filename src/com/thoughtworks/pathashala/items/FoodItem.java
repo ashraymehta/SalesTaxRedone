@@ -3,6 +3,7 @@ package com.thoughtworks.pathashala.items;
 public class FoodItem implements Item{
     private boolean isImported;
     private double price;
+    private String description;
 
     public FoodItem(boolean isImported, double price) {
         this.isImported = isImported;
@@ -25,6 +26,11 @@ public class FoodItem implements Item{
     @Override
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

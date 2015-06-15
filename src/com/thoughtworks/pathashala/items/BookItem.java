@@ -3,6 +3,7 @@ package com.thoughtworks.pathashala.items;
 public class BookItem implements Item {
     private boolean isImported;
     private double price;
+    private String description;
 
     public BookItem() {
 
@@ -29,6 +30,11 @@ public class BookItem implements Item {
     @Override
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
