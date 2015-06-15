@@ -22,4 +22,16 @@ public class BookItemTest {
 
         assertEquals(expectedTax, actualTax);
     }
+
+    @Test
+    public void shouldBeRepresentedAsStringProperly() throws Exception {
+        BookItem bookItem = new BookItem(false, 10);
+        bookItem.setDescription("imported book");
+        bookItem.setQuantity(1);
+
+        String actualString = bookItem.toString();
+        String expectedString = "1 imported book at 10.00";
+
+        assertEquals(expectedString, actualString);
+    }
 }

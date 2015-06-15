@@ -1,5 +1,7 @@
 package com.thoughtworks.pathashala.items;
 
+import java.text.DecimalFormat;
+
 public class BookItem implements Item {
     private boolean isImported;
     private double price;
@@ -51,5 +53,11 @@ public class BookItem implements Item {
     @Override
     public double calculateImportDuty() {
         return roundOff(0.05d * price);
+    }
+
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        return quantity + " " + description + " at " + df.format(price);
     }
 }
